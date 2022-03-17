@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="AStar">
+      <UniqueIdentifier>{a0f1f4fd-9fe6-4c72-8197-d880f1c0f92e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AStar\Utility">
+      <UniqueIdentifier>{5935a66b-84ce-461f-a1c5-eb2c7ced2183}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AStar.cpp">
+      <Filter>AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>AStar\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>AStar\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>AStar\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="AStarFirstTry.cpp">
+      <Filter>Fichiers de ressources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AStar.h">
+      <Filter>AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>AStar\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>AStar\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>AStar\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>AStar\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="AStartUtility.h">
+      <Filter>AStar\Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
