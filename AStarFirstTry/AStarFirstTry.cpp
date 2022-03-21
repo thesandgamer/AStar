@@ -136,7 +136,7 @@ void DisplayGridWithNodes(Graph& graph, Node& goalNode, Node& startNode, List& o
 
 }
 
-void ShowPath(Graph& graph, Node& current, Node& startNode,Node& goalNode, List& closedList)
+void CalculateShowPath(Graph& graph, Node& current, Node& startNode,Node& goalNode, List& closedList)
 {
     List path = List(); //Liste final pour le chemin
 
@@ -193,7 +193,43 @@ void ShowPath(Graph& graph, Node& current, Node& startNode,Node& goalNode, List&
 
 }
 
+void ShowPath(Graph& graph,List& path,Node& startNode, Node& goalNode)
+{
 
+#pragma region ShowGrid
+    for (int yy = 0; yy < graph.graphHeight; yy++)//Colognes
+    {
+        for (int xx = 0; xx < graph.graphWidth; xx++)//Lignes
+        {
+            if (xx == startNode.x && yy == startNode.y)
+            {
+                cout << "[ S ]";
+            }
+            else if (xx == goalNode.x && yy == goalNode.y)
+            {
+                cout << "[ G ]";
+            }
+            else if (!graph.GetNode(Vector2(xx, yy)).traversable)
+            {
+                cout << "[ " << "X " << "]";
+            }
+            else if (path.IsInList(Vector2(xx, yy)))
+            {
+                cout << "[ " << "@ " << "]";
+            }
+            else
+            {
+                cout << "[ " << "  " << "]";
+            }
+        }
+        cout << endl;
+
+    }
+#pragma endregion
+
+
+
+}
 
 void Init()
 {
@@ -279,7 +315,7 @@ void Init()
     }
 
 
-    ShowPath(graph,current,startNode,goalNode,closedList);
+    CalculateShowPath(graph,current,startNode,goalNode,closedList);
 
 
 }
@@ -287,7 +323,17 @@ void Init()
 
 int main()
 {
-    Init();
+    //Init();
+    AStar astar(10,15);
+    List path; 
+
+    vector<Vector2> obstacles = { Vector2(3,1),Vector2(2,2),Vector2(3,2) ,Vector2(4,2) ,Vector2(5,2) ,Vector2(6,2),Vector2(7,2),Vector2(8,2),Vector2(9,2), Vector2(5,3) };//,Vector2(10,2) };
+    astar.aStarGrid.AddObstacles(obstacles);
+    for (Node nd : astar.GetPath(Vector2(7, 4), Vector2(8, 1)))
+    {
+        path += nd ;
+    }
+    ShowPath(astar.aStarGrid, path, astar.startNode, astar.goalNode);
 }
 
 

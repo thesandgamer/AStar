@@ -8,7 +8,7 @@
 #include "Node.h"
 #include "List.h"
 #include "Graph.h"
-#include "AStartUtility.h"
+#include "AStarUtility.h"
 
 class AStar
 {
